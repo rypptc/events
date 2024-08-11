@@ -1,7 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, View, Platform, ScrollView, TextInput } from 'react-native';
-
+import { SafeAreaView, StyleSheet, Text, View, Platform, ScrollView, TextInput, Button, TouchableOpacity } from 'react-native';
 export default function App() {
   const [text, setText] = useState("");
   return (
@@ -13,7 +12,12 @@ export default function App() {
           <TextInput 
             defaultValue={text}
             onChangeText={txt => setText(txt)}
+            style={{borderWidth: 1, padding: 10}}
           />
+          <Button title="press me" onPress={()=> console.log("Hello World!!")} />
+          <TouchableOpacity style={{ padding: 10, backgroundColor: "purple", width: 150, height: 200, justifyContent: "center", alignItems: "center" }} onPress={()=> console.log("Hello World 2")}>
+            <Text style={{ color: "white" }}>Click me too</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
       <StatusBar style="dark" />
