@@ -5,8 +5,14 @@ const Drawer = createDrawerNavigator();
 
 export const MyDrawer = () => {
   return (
-    <Drawer.Navigator>
-      <Drawer.Screen name="Home2" component={HomeStack} />
+    <Drawer.Navigator
+      screenOptions={{headerShown: false}}
+    >
+      <Drawer.Screen 
+        name="HomeStack" 
+        component={HomeStack} 
+        options={{ title: "Home" }} 
+      />
     </Drawer.Navigator>
   );
 }
