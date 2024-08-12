@@ -1,13 +1,14 @@
 import { Text, View, FlatList, RefreshControl } from "react-native";
 import { DUMMY_DATA } from "../../data/dummy";
+import EventItem from './event-item';
 
 const EventList = () => {
     const renderItem = ({ item }) => {
-        return (
-            <View style={{ padding: 40 }}>
-                <Text>{item.title}</Text>
-            </View>
-        );
+      return <EventItem 
+                id={item.id} 
+                title={item.title} 
+                description={item.description} 
+              />;
     };
   return (
     <View>
