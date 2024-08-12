@@ -4,10 +4,12 @@ import { View, Text, StyleSheet } from "react-native";
 const EventDetailScreen = () => {
   const route = useRoute();
 
-  const { eventId } = route.params;
+  const { eventId, title, description } = route.params;
   return (
     <View style={styles.screen}>
       <Text style={{ fontSize: 20 }}>This is the event detail screen for {eventId}</Text>
+      <Text style={{ fontSize: 20 }}>{title}</Text>
+      <Text style={{ fontSize: 20 }}>{description}</Text>
     </View>
   );
 }
