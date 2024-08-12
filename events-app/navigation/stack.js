@@ -1,15 +1,16 @@
+import { useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/home-screen';
 import EventDetailScreen from '../screens/event-detail-screen';
+import { navOptions } from './options';
 
 const Stack = createStackNavigator();
 
 export const HomeStack = () => {
+  const navigation = useNavigation();
   return (
     <Stack.Navigator
-      screenOptions={{
-        headerTitleAlign: 'center',  // Ensure the header title is centered on both platforms
-      }}
+      screenOptions={() => navOptions(navigation)}  // Use navOptions to set screen options
     >
       <Stack.Screen 
         name="Home" 
