@@ -9,6 +9,7 @@ export const HomeStack = () => {
     <Stack.Navigator
       screenOptions={{
         headerTitleAlign: 'center',  // Ensure the header title is centered on both platforms
+        headerShown: false
       }}
     >
       <Stack.Screen 
