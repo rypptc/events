@@ -2,6 +2,7 @@ import './utils/gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { HomeStack } from './navigation/stack';
 import { MyDrawer } from './navigation/drawer';
+import { StatusBar } from 'expo-status-bar';
 
 export default function App() {
 
@@ -9,6 +10,7 @@ export default function App() {
     <NavigationContainer>
       {/* <HomeStack /> */}
       <MyDrawer />
+      <StatusBar style='light' />
     </NavigationContainer>
   );
 }
