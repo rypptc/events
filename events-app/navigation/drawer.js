@@ -1,5 +1,5 @@
-import { createDrawerNavigator, DrawerItemList } from '@react-navigation/drawer';
-import { SafeAreaView, View, Image } from 'react-native'; // Import necessary components
+import { createDrawerNavigator, DrawerItem, DrawerItemList } from '@react-navigation/drawer';
+import { SafeAreaView, View, Image, Linking } from 'react-native';
 import { HomeStack, ProfileStack } from './stack';
 
 const Drawer = createDrawerNavigator();
@@ -17,6 +17,10 @@ export const MyDrawer = () => {
               />
             </View>
             <DrawerItemList {...props} />
+            <DrawerItem
+              label="More info"
+              onPress={() => Linking.openURL('https://google.com')}
+            />
           </SafeAreaView>
         );
       }}
