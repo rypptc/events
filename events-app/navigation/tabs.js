@@ -6,7 +6,29 @@ const Tab = createBottomTabNavigator();
 
 export const HomeTabs = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        headerShown: false,
+        tabBarShowLabel: false,
+        tabBarStyle: {
+          backgroundColor: 'black',
+        },
+        tabBarActiveTintColor: 'yellow',
+        tabBarInactiveTintColor: 'red',
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'HomeTabs') {
+            iconName = focused ? 'home' : 'home-outline';
+          } else if (route.name === 'QrCode') {
+            iconName = focused ? 'qr-code' : 'qr-code-outline';
+          }
+
+          // Return the icon component
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+      })}
+    >
       <Tab.Screen 
         name="HomeTabs"
         component={HomeScreen}
