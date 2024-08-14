@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { Ionicons } from '@expo/vector-icons';
 import HomeScreen from '../screens/home-screen';
 import QrCodeScreen from '../screens/qr-code-screen';
 
@@ -14,7 +15,7 @@ export const HomeTabs = () => {
           backgroundColor: 'black',
         },
         tabBarActiveTintColor: 'yellow',
-        tabBarInactiveTintColor: 'red',
+        // tabBarInactiveTintColor: 'red',
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
 
@@ -24,8 +25,13 @@ export const HomeTabs = () => {
             iconName = focused ? 'qr-code' : 'qr-code-outline';
           }
 
-          // Return the icon component
-          return <Ionicons name={iconName} size={size} color={color} />;
+          return (
+            <Ionicons 
+              name={iconName} 
+              size={focused ? 35 : size} 
+              color={color} 
+            />
+          );
         },
       })}
     >
