@@ -5,6 +5,7 @@ import EventDetailScreen from '../screens/event-detail-screen';
 import ProfilesScreen from '../screens/profiles/profiles-screen';
 import ProfileDetailScreen from '../screens/profiles/profile-detail-screen';
 import { navOptions } from './options';
+import { HomeTabs } from './tabs';
 
 const Stack = createStackNavigator();
 
@@ -12,17 +13,17 @@ export const HomeStack = () => {
   const navigation = useNavigation();
   return (
     <Stack.Navigator
-      screenOptions={() => navOptions(navigation)}  // Use navOptions to set screen options
+      screenOptions={() => navOptions(navigation)}
     >
       <Stack.Screen 
         name="Home" 
-        component={HomeScreen} 
-        options={{ title: 'Home' }}  // Optional: Custom title for the Home screen
+        component={HomeTabs} 
+        options={{ title: 'Home' }}
       />
       <Stack.Screen 
         name="Event" 
         component={EventDetailScreen} 
-        options={{ title: 'Event Details' }}  // Optional: Custom title for the Event screen
+        options={{ title: 'Event Details' }}
       />
     </Stack.Navigator>
   );
