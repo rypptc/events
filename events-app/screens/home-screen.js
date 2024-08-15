@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Button } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import EventList from "../components/events/event-list";
 
 const HomeScreen = () => {
   const [data, setData] = useState([]);
   const [refresh, setRefresh] = useState(false);
+  const navigation = useNavigation();
 
   const handleRefresh = () => {
     console.log("refreshing");
@@ -25,7 +27,15 @@ const HomeScreen = () => {
 
   return (
     <View style={styles.screen}>
-      <EventList data={data} onRefresh={handleRefresh} refreshing={refresh} />
+      <Button
+        title="Add New Event"
+        onPress={() => navigation.navigate("New Event")}
+      />
+      <EventList
+        data={data}
+        onRefresh={handleRefresh}
+        refreshing={refresh}
+      />
     </View>
   );
 };
