@@ -14,8 +14,8 @@ const EventDetailScreen = () => {
       headerTitle: name,
       headerLeft: () => (
         <HeaderBackButton
-          tintColor="white"  // Color of the back button
-          onPress={() => navigation.goBack()}  // Handle back navigation
+          tintColor="white"
+          onPress={() => navigation.goBack()}
         />
       ),
     });

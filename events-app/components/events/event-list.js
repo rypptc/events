@@ -1,7 +1,7 @@
 import { Text, View, FlatList, RefreshControl } from "react-native";
 import EventItem from './event-item';
 
-const EventList = ({ data }) => {
+const EventList = ({ data, onRefresh, refreshing }) => {
   const renderItem = ({ item }) => {
       return <EventItem 
                 id={item.id} 
@@ -19,7 +19,7 @@ const EventList = ({ data }) => {
         refreshControl={
             <RefreshControl
               refreshing={false}
-              onRefresh={() => console.log('refreshing...')}
+              onRefresh={onRefresh}
             />
           }
       />
